@@ -81,7 +81,7 @@ export default async function ProductPage({ params }: Props) {
 
       <div className="grid gap-10 md:grid-cols-2">
         <div
-          className="relative h-72 overflow-hidden rounded-2xl sm:h-96"
+          className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl"
           style={{ backgroundColor: product.accentHex }}
         >
           <Image
@@ -90,7 +90,7 @@ export default async function ProductPage({ params }: Props) {
             fill
             priority
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
+            className="object-contain p-4"
           />
         </div>
 
@@ -142,7 +142,7 @@ export default async function ProductPage({ params }: Props) {
               data-analytics-event={`whatsapp_click_product_${product.slug}`}
               className="inline-block rounded-full bg-orange px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-orange-dark"
             >
-              Cotizar por caja
+              Solicitar precios
             </a>
             <Link href="/como-comprar#unidad" className="text-sm font-semibold text-forest hover:underline">
               ¿Buscas 1-2 unidades?
@@ -150,6 +150,44 @@ export default async function ProductPage({ params }: Props) {
           </div>
         </div>
       </div>
+
+      <section className="mt-14">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="font-display text-xl font-semibold text-forest">
+              Galería de {product.line}
+            </h2>
+            <p className="mt-1 text-sm text-stone">
+              Fotos de producto, beneficios, sabores y presentaciones disponibles.
+            </p>
+          </div>
+          <a
+            href={waLink(`Hola ATLINN, quiero ver disponibilidad y sabores de ${product.line}.`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-analytics-event={`whatsapp_click_product_gallery_${product.slug}`}
+            className="w-fit rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-cream transition-colors hover:bg-forest-dark"
+          >
+            Consultar por WhatsApp
+          </a>
+        </div>
+        <div className="mt-5 flex snap-x gap-4 overflow-x-auto pb-3">
+          {product.gallery.map((item) => (
+            <div
+              key={item.src}
+              className="relative aspect-[4/5] w-60 shrink-0 snap-start overflow-hidden rounded-xl border border-line-stroke bg-white sm:w-72"
+            >
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                sizes="(min-width: 640px) 288px, 240px"
+                className="object-contain bg-white"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
 
       {product.flavors.length > 0 && (
         <section className="mt-14">

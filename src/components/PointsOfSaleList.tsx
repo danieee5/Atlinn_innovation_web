@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { pointsOfSale, mapsSearchLink, type PointOfSaleCategory } from "@/lib/pointsOfSale";
 
@@ -28,20 +29,34 @@ export default function PointsOfSaleList({ analyticsPrefix }: { analyticsPrefix:
             </svg>
             <h3 className="font-display text-base font-semibold text-forest">{category.title}</h3>
           </div>
-          <ul className="mt-3 space-y-1">
+          <ul className="mt-4 space-y-2">
             {category.places.map((place) => (
-              <li key={place}>
+              <li key={place.name}>
                 <a
-                  href={mapsSearchLink(place)}
+                  href={mapsSearchLink(place.name)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-analytics-event={`${analyticsPrefix}_${place.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="group flex items-center gap-1.5 rounded-md py-1 text-sm text-charcoal transition-colors hover:text-forest"
+                  data-analytics-event={`${analyticsPrefix}_${place.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="group flex min-h-12 items-center gap-3 rounded-lg border border-transparent px-2 py-1.5 text-sm text-charcoal transition-colors hover:border-line-stroke hover:bg-cream"
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" className="shrink-0 text-stone group-hover:text-orange">
-                    {pinIcon}
-                  </svg>
-                  <span className="group-hover:underline">{place}</span>
+                  {place.logo ? (
+                    <span className="relative flex h-10 w-14 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white">
+                      <Image
+                        src={place.logo}
+                        alt={`Logo de ${place.name}`}
+                        fill
+                        sizes="56px"
+                        className="object-contain p-1"
+                      />
+                    </span>
+                  ) : (
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-cream-dark text-stone group-hover:text-orange">
+                      <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                        {pinIcon}
+                      </svg>
+                    </span>
+                  )}
+                  <span className="font-medium group-hover:underline">{place.name}</span>
                 </a>
               </li>
             ))}

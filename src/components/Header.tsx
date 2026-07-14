@@ -40,14 +40,20 @@ export default function Header() {
 
         <div className="flex shrink-0 items-center gap-2">
           <a
-            href={waLink("Hola ATLINN, quiero cotizar cajas de Balance Products.")}
+            href={waLink("Hola ATLINN, quiero acceder a precios de distribuidor de Balance Products para mi negocio.")}
             target="_blank"
             rel="noopener noreferrer"
-            data-analytics-event="whatsapp_click_header"
+            data-analytics-event="whatsapp_click_header_b2b"
+            className="hidden rounded-full bg-forest px-4 py-2 text-sm font-semibold text-cream transition-colors hover:bg-forest-dark sm:inline-block"
+          >
+            Precios negocio
+          </a>
+          <Link
+            href="/productos"
             className="rounded-full bg-orange px-4 py-2 text-sm font-semibold text-cream transition-colors hover:bg-orange-dark sm:px-5"
           >
-            Cotizar por caja
-          </a>
+            Ver catálogo
+          </Link>
           <MobileNav />
         </div>
       </div>

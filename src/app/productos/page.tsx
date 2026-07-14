@@ -28,18 +28,18 @@ export default function ProductosPage() {
         Guayaquil, para empresas, gimnasios y farmacias.
       </p>
 
-      <div className="mt-8 overflow-hidden rounded-2xl">
+      <div className="mt-8 overflow-hidden rounded-2xl bg-white">
         <Image
           src="/images/products/catalogo-grupal.png"
           alt="Catálogo completo Balance Products: Hidralife, Maximum, Arriba, Mishá y Stevia Balance"
           width={1672}
           height={941}
-          className="h-auto w-full object-cover"
+          className="h-auto w-full object-contain"
           priority
         />
       </div>
 
-      <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
+      <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-5">
         {products.map((product) => (
           <ProductCard key={product.slug} product={product} />
         ))}

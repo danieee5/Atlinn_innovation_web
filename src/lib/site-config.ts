@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: "ATLINN Innovations",
   shortName: "ATLINN",
-  legalName: "ATL Innovations Atlinn S.A.",
+  legalName: "ATL Innovations S.A.",
   foundedYear: 2019,
-  tagline: "Distribuidor oficial de Balance Products en Guayaquil",
+  tagline: "Distribuidor autorizado de Balance Products en el Guayas",
   description:
-    "ATLINN Innovations es el distribuidor oficial de Balance Products en Guayaquil: Hidralife, Maximum, Mishá, Arriba y Stevia Balance al por mayor para empresas, gimnasios y farmacias, con entrega directa en toda la ciudad.",
+    "ATLINN Innovations es distribuidor autorizado de Balance Products en el Guayas: Hidralife, Maximum, Mishá, Arriba y Stevia Balance para hogares, negocios, empresas y gimnasios, con atención directa por WhatsApp.",
   brand: {
     name: "Balance Products",
     url: "https://balanceproducts.com.ec",
@@ -25,7 +25,7 @@ export const siteConfig = {
     region: "Guayas",
     country: "Ecuador",
   },
-  deliveryZones: ["Guayaquil", "Samborondón", "Vía a Daule", "Salitre"],
+  deliveryZones: ["Guayaquil", "Samborondón", "Vía a la Costa"],
   bankTransfer: {
     banco: "Banco del Austro",
     tipoCuenta: "Corriente",

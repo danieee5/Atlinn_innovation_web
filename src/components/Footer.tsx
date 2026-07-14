@@ -8,10 +8,10 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-4">
         <div>
           <div className="font-display text-lg font-semibold">
-            ATLINN <span className="text-orange">INNOVATIONS</span>
+            ATL <span className="text-orange">INNOVATIONS</span> S.A.
           </div>
           <p className="mt-3 max-w-xs text-sm text-cream/80">
-            {siteConfig.tagline}. Hecho en {siteConfig.address.city}, Ecuador.
+            {siteConfig.tagline}. Atención directa desde {siteConfig.address.city}, Ecuador.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {siteConfig.name} ({siteConfig.legalName}). Todos los derechos reservados.
           </p>
           <p className="mt-1 sm:pr-20">
-            {siteConfig.name} es distribuidor oficial autorizado de {siteConfig.brand.name} en Guayaquil.{" "}
+            {siteConfig.name} es distribuidor autorizado de {siteConfig.brand.name} en el Guayas.{" "}
             {siteConfig.brand.name} es una marca elaborada en {siteConfig.brand.origin}.
           </p>
         </div>

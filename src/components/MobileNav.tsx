@@ -15,7 +15,7 @@ export default function MobileNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div className="relative md:hidden">
       <button
         type="button"
         aria-label={open ? "Cerrar menú" : "Abrir menú"}
@@ -36,7 +36,7 @@ export default function MobileNav() {
       </button>
 
       {open && (
-        <nav className="absolute inset-x-0 top-full border-b border-line-stroke bg-cream px-4 py-3">
+        <nav className="absolute right-0 top-11 z-50 w-64 rounded-xl border border-line-stroke bg-cream p-2 shadow-lg">
           <ul className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <li key={link.href}>

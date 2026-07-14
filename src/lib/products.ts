@@ -8,6 +8,11 @@ export type NutritionFact = {
   value: string;
 };
 
+export type ProductMedia = {
+  src: string;
+  alt: string;
+};
+
 export type Product = {
   slug: string;
   line: string;
@@ -25,6 +30,7 @@ export type Product = {
   minimumOrder?: string;
   useCases: string[];
   image: string;
+  gallery: ProductMedia[];
 };
 
 export const products: Product[] = [
@@ -49,6 +55,7 @@ export const products: Product[] = [
       { name: "Manzana", colorHex: "#8BC53F" },
       { name: "Jamaica", colorHex: "#C8203D" },
       { name: "Blueberries", colorHex: "#2E6FA7" },
+      { name: "Toronja", colorHex: "#F26C5B" },
     ],
     nutrition: [
       { label: "Electrolitos", value: "6 esenciales + zinc" },
@@ -59,6 +66,20 @@ export const products: Product[] = [
     wholesaleUnit: "Caja de 12 unidades",
     minimumOrder: "1 caja (12 unidades)",
     image: "/images/products/hidralife.png",
+    gallery: [
+      {
+        src: "/images/social/hidralife-cuatro-sabores.jpeg",
+        alt: "Hidralife en sabores uva, manzana, jamaica y blueberries",
+      },
+      {
+        src: "/images/social/hidralife-gimnasio-zinc.jpeg",
+        alt: "Hidralife como suplemento nutricional hidratante con zinc",
+      },
+      {
+        src: "/images/social/hidralife-toronja.jpeg",
+        alt: "Hidralife sabor toronja con electrolitos",
+      },
+    ],
   },
   {
     slug: "maximum",
@@ -91,6 +112,24 @@ export const products: Product[] = [
     wholesaleUnit: "Caja de 12 unidades",
     minimumOrder: "1 caja (12 unidades)",
     image: "/images/products/maximum.png",
+    gallery: [
+      {
+        src: "/images/social/maximum-post-entrenamiento.jpeg",
+        alt: "Maximum Protein Drink para volver a la carga después de entrenar",
+      },
+      {
+        src: "/images/social/maximum-frutos-tropicales.jpeg",
+        alt: "Maximum sabor frutos tropicales con 20 gramos de proteína",
+      },
+      {
+        src: "/images/social/maximum-gimnasio-botellas.jpeg",
+        alt: "Botellas Maximum en gimnasio",
+      },
+      {
+        src: "/images/social/maximum-complementa-entrenamiento.jpeg",
+        alt: "Maximum como complemento para entrenamiento",
+      },
+    ],
   },
   {
     slug: "misha",
@@ -124,6 +163,20 @@ export const products: Product[] = [
     wholesaleUnit: "Caja de 12 unidades",
     minimumOrder: "1 caja (12 unidades)",
     image: "/images/products/misha.png",
+    gallery: [
+      {
+        src: "/images/social/misha-botellas-naturaleza.jpeg",
+        alt: "Botellas Mishá en entorno natural",
+      },
+      {
+        src: "/images/social/misha-guayusa-beneficios.jpeg",
+        alt: "Mishá bebida natural de guayusa con beneficios",
+      },
+      {
+        src: "/images/social/misha-conexion-natural.jpeg",
+        alt: "Mishá y conexión con lo natural",
+      },
+    ],
   },
   {
     slug: "stevia-balance",
@@ -156,19 +209,41 @@ export const products: Product[] = [
     minimumOrder: "3 fundas o cajas",
     useCases: ["Endulzar bebidas", "Endulzar alimentos", "Dietas bajas en calorías"],
     image: "/images/products/stevia-balance.png",
+    gallery: [
+      {
+        src: "/images/social/stevia-beneficios-planta.jpeg",
+        alt: "Beneficios de la planta Stevia Balance",
+      },
+      {
+        src: "/images/social/stevia-balance-liquid.jpeg",
+        alt: "Stevia Balance líquido",
+      },
+      {
+        src: "/images/social/stevia-mejor-endulzador.jpeg",
+        alt: "Stevia Balance como endulzador",
+      },
+      {
+        src: "/images/social/stevia-consumo-azucar.jpeg",
+        alt: "Información sobre consumo de azúcar y Stevia Balance",
+      },
+    ],
   },
   {
     slug: "arriba",
     line: "Arriba",
     name: "Arriba — Néctar de Cacao",
-    tagline: "Hidratación natural con fibra prebiótica, sabor mango",
+    tagline: "Hidratación natural con fibra prebiótica en varios sabores",
     description:
-      "Néctar hecho con cacao ecuatoriano, con fibra prebiótica y sabor mango. Una alternativa natural y funcional para hidratarte con un toque de sabor distinto.",
+      "Néctar hecho con cacao ecuatoriano y fibra prebiótica. Una alternativa natural y funcional para hidratarte con sabores como mango, passion fruit y natural.",
     accent: "arriba",
     accentHex: "#B23A2E",
     category: "Néctar funcional",
-    features: ["Hidratación natural", "Con fibra prebiótica", "Cacao ecuatoriano", "Sabor mango"],
-    flavors: [{ name: "Mango", colorHex: "#F2B705" }],
+    features: ["Hidratación natural", "Con fibra prebiótica", "Cacao ecuatoriano", "Mango, passion fruit y natural"],
+    flavors: [
+      { name: "Mango", colorHex: "#F2B705" },
+      { name: "Passion fruit", colorHex: "#D9557E" },
+      { name: "Natural", colorHex: "#8A4F2A" },
+    ],
     nutrition: [
       { label: "Base", value: "Cacao ecuatoriano" },
       { label: "Fibra", value: "Prebiótica" },
@@ -177,6 +252,28 @@ export const products: Product[] = [
     wholesaleUnit: "Caja de 12 unidades",
     minimumOrder: "1 caja (12 unidades)",
     image: "/images/products/arriba.png",
+    gallery: [
+      {
+        src: "/images/social/arriba-nectar-mango.jpeg",
+        alt: "Arriba néctar de cacao sabor mango",
+      },
+      {
+        src: "/images/social/arriba-nectar-passion-fruit.jpeg",
+        alt: "Arriba néctar de cacao sabor passion fruit",
+      },
+      {
+        src: "/images/social/arriba-nectar-original.jpeg",
+        alt: "Arriba néctar de cacao original",
+      },
+      {
+        src: "/images/social/arriba-elige-sabor.jpeg",
+        alt: "Arriba néctar de cacao en distintos sabores",
+      },
+      {
+        src: "/images/social/arriba-cacao-refrescante.jpeg",
+        alt: "Arriba néctar de cacao refrescante",
+      },
+    ],
   },
 ];
 

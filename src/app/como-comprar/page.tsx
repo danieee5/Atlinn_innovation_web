@@ -5,26 +5,26 @@ import PointsOfSaleList from "@/components/PointsOfSaleList";
 export const metadata: Metadata = {
   title: "Cómo comprar",
   description:
-    "Cómo cotizar cajas de Balance Products al por mayor con ATLINN en Guayaquil, y dónde comprar 1-2 unidades al detalle.",
+    "Cómo comprar Balance Products con ATLINN en Guayaquil, Samborondón y Vía a la Costa, y dónde encontrarlos en puntos autorizados.",
   alternates: { canonical: "/como-comprar" },
 };
 
 const wholesaleSteps = [
   {
     title: "Escríbenos por WhatsApp",
-    body: `Cuéntanos qué productos y cuántas cajas necesitas al ${siteConfig.whatsapp.display}.`,
+    body: `Cuéntanos qué productos buscas, para hogar o negocio, al ${siteConfig.whatsapp.display}.`,
   },
   {
-    title: "Te cotizamos",
-    body: "Te confirmamos precio por volumen, disponibilidad y fecha de entrega.",
+    title: "Confirmamos disponibilidad",
+    body: "Te indicamos productos, sabores, presentaciones y opciones por volumen si compras para negocio.",
   },
   {
     title: "Realiza tu transferencia",
     body: "Transfiere el valor a la cuenta de Banco del Austro que aparece abajo.",
   },
   {
-    title: "Te entregamos nosotros mismos",
-    body: "Entrega en 24 horas o más, gratis en Guayaquil, Samborondón, Vía a Daule y Salitre.",
+    title: "Coordinamos tu entrega",
+    body: "Entrega rápida y segura en Guayaquil, Samborondón y Vía a la Costa.",
   },
 ];
 
@@ -40,24 +40,24 @@ const bankRows: [string, string][] = [
 
 const faqs = [
   {
-    question: "¿Puedo comprar una sola botella de Balance Products?",
+    question: "¿Puedo comprar Balance Products para mi casa?",
     answer:
-      "Nuestros pedidos directos son por caja. Para 1-2 unidades te indicamos la farmacia o tienda más cercana en Guayaquil.",
+      "Sí. Escríbenos por WhatsApp y te ayudamos con disponibilidad, sabores y la mejor forma de entrega o punto de compra cercano.",
   },
   {
     question: "¿Cuánto se demora la entrega?",
     answer:
-      "24 horas o más desde que confirmamos tu pedido. La entrega es gratis dentro de Guayaquil, Samborondón, Vía a Daule y Salitre.",
+      "Coordinamos entrega rápida una vez confirmado el pedido. Atendemos Guayaquil, Samborondón y Vía a la Costa.",
   },
   {
     question: "¿Hacen envíos fuera de Guayaquil?",
     answer:
-      "Fuera de Guayaquil y Gran Guayaquil coordinamos el envío por courier (como Servientrega), con un costo adicional según la tarifa del operador.",
+      "Para pedidos fuera de la zona de cobertura directa podemos orientarte por WhatsApp y confirmar si existe una alternativa disponible.",
   },
   {
     question: "¿Cuál es el pedido mínimo por caja?",
     answer:
-      "Para bebidas (Hidralife, Maximum, Mishá, Arriba) el pedido mínimo es 1 caja de 12 unidades. Para Stevia Balance, el mínimo es 3 fundas o cajas.",
+      "Para negocios manejamos precios por volumen. Para bebidas (Hidralife, Maximum, Mishá, Arriba) la caja referencial es de 12 unidades; para Stevia Balance hay presentaciones por caja o funda.",
   },
   {
     question: "¿Puedo pagar con transferencia bancaria?",
@@ -81,15 +81,13 @@ export default function ComoComprarPage() {
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <span className="inline-block rounded-full bg-forest/10 px-3 py-1 text-xs font-semibold text-forest">
-        Distribuidor oficial en Guayaquil
+        Distribuidor autorizado en el Guayas
       </span>
       <h1 className="mt-4 font-display text-3xl font-semibold text-forest sm:text-4xl">
         Cómo comprar
       </h1>
       <p className="mt-3 max-w-2xl text-stone">
-        Nuestros pedidos directos son por caja, para negocios que quieren
-        revender o abastecerse. Si buscas 1-2 unidades, te indicamos dónde
-        comprarlas al detalle.
+        Compra directa por WhatsApp para tu casa o negocio. Te confirmamos productos, sabores, disponibilidad, pago por transferencia y entrega según tu zona.
       </p>
 
       <section className="mt-10">
@@ -97,7 +95,7 @@ export default function ComoComprarPage() {
           Compra al por mayor
         </h2>
         <p className="mt-1 text-sm text-stone">
-          Para empresas, gimnasios, farmacias, revendedores y eventos.
+          Para empresas, gimnasios, cafeterías, restaurantes, revendedores y eventos.
         </p>
         <ol className="mt-6 grid gap-6 sm:grid-cols-2">
           {wholesaleSteps.map((step, i) => (
@@ -111,13 +109,13 @@ export default function ComoComprarPage() {
 
         <div className="mt-8 flex justify-start">
           <a
-            href={waLink("Hola ATLINN, quiero cotizar cajas de Balance Products.")}
+            href={waLink("Hola ATLINN, quiero comprar Balance Products. Me ayudan con disponibilidad y entrega?")}
             target="_blank"
             rel="noopener noreferrer"
             data-analytics-event="whatsapp_click_como_comprar_mayoreo"
             className="rounded-full bg-forest px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-forest-dark"
           >
-            Cotizar por caja
+            Comprar por WhatsApp
           </a>
         </div>
 
@@ -150,17 +148,16 @@ export default function ComoComprarPage() {
 
       <section id="unidad" className="mt-14 scroll-mt-20 rounded-2xl bg-cream-dark p-6 sm:p-8">
         <h2 className="font-display text-xl font-semibold text-forest">
-          ¿Solo quieres 1 o 2 unidades?
+          Puntos de venta autorizados
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-stone">
-          No hacemos entregas a domicilio de unidades sueltas. Encuentra
-          Balance Products al detalle en estos puntos de venta en Guayaquil:
+          También puedes encontrar nuestros productos en cadenas, gimnasios y puntos de venta a nivel nacional:
         </p>
         <div className="mt-6">
           <PointsOfSaleList analyticsPrefix="maps_click_como_comprar" />
         </div>
         <a
-          href={waLink("Hola ATLINN, busco 1-2 unidades de Balance Products, ¿dónde las consigo cerca de mí?")}
+          href={waLink("Hola ATLINN, busco un punto de venta autorizado de Balance Products cerca de mí.")}
           target="_blank"
           rel="noopener noreferrer"
           data-analytics-event="whatsapp_click_como_comprar_unidad"
