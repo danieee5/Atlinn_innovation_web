@@ -23,6 +23,8 @@
 # misc
 .DS_Store
 *.pem
+# Local delivery backups are shared separately, never committed to the repository.
+*-entrega-*.zip
 
 # debug
 npm-debug.log*
